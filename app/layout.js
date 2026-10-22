@@ -1,9 +1,31 @@
 import './globals.css';
-import { Shippori_Mincho, Zen_Kaku_Gothic_New } from 'next/font/google';
+import localFont from 'next/font/local';
 import { site, kategori, itemKategori } from '@/lib/data';
 
-const shippori = Shippori_Mincho({ subsets: ['latin'], weight: ['500', '700'], variable: '--font-shippori', display: 'swap' });
-const zen = Zen_Kaku_Gothic_New({ subsets: ['latin'], weight: ['400', '500', '700'], variable: '--font-zen', display: 'swap' });
+// Shippori Mincho 3.110 & Zen Kaku Gothic New 1.002 (OFL, app/fonts/OFL-*.txt), disubset sendiri: next/font/google
+// memuat ±120 irisan unicode-range per bobot (361 preload, ±6,6 MB). Subset Shippori (judul): ASCII + simbol Latin-1
+// + tanda baca umum (U+2010–203A, panah, ≥ ≤ − ™). Subset Zen (teks & isian tamu): ASCII + Latin-1 + Latin Extended-A
+// + tanda baca yang sama + 32 kanji/kana yang dipakai situs di luar kelas .jp. Bila menambah aksara baru, buat ulang
+// dengan pyftsubset (fontTools) --flavor=woff2 --layout-features-=frac dari TTF google/fonts.
+const shippori = localFont({
+  src: [
+    { path: './fonts/ShipporiMincho-Medium.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/ShipporiMincho-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-shippori',
+  display: 'swap',
+  adjustFontFallback: 'Times New Roman',
+});
+const zen = localFont({
+  src: [
+    { path: './fonts/ZenKakuGothicNew-Regular.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/ZenKakuGothicNew-Medium.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/ZenKakuGothicNew-Bold.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-zen',
+  display: 'swap',
+  adjustFontFallback: 'Arial',
+});
 
 const HARI = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const jam24 = (j) => j.replace('.', ':');
