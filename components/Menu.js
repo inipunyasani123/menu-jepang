@@ -29,20 +29,20 @@ function Kartu({ m, onPilih }) {
   return (
     <li className={`nampan-lacquer ${m.habis ? 'nampan-habis' : ''}`}>
       <article className="relative flex gap-3.5 p-3.5 sm:p-4" aria-labelledby={`item-${m.id}`}>
-        <div className="h-[4.75rem] w-[4.75rem] shrink-0 sm:h-20 sm:w-20">
+        <div className={`h-[4.75rem] w-[4.75rem] shrink-0 sm:h-20 sm:w-20 ${m.habis ? 'opacity-45' : ''}`}>
           <Ilustrasi data={m.ilustrasi} className="h-full w-full" />
         </div>
         <div className="min-w-0 flex-1">
-          <h3 id={`item-${m.id}`} className={`font-display text-[1.08rem] font-bold leading-snug text-kertas ${favorit ? 'pe-7' : ''}`}>{m.nama}</h3>
+          <h3 id={`item-${m.id}`} className={`font-display text-[1.08rem] font-bold leading-snug ${m.habis ? 'text-pudar' : 'text-kertas'} ${favorit ? 'pe-7' : ''}`}>{m.nama}</h3>
           {label.length > 0 && (
             <p className="mt-0.5 flex flex-wrap gap-x-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em]">
-              {label.map((t) => <span key={t} className={LABEL_TAG[t][1]}>{LABEL_TAG[t][0]}</span>)}
+              {label.map((t) => <span key={t} className={m.habis ? 'text-pudar' : LABEL_TAG[t][1]}>{LABEL_TAG[t][0]}</span>)}
             </p>
           )}
-          <p className="mt-1 text-[0.86rem] leading-snug text-abu-2">{m.deskripsi}</p>
+          <p className={`mt-1 text-[0.86rem] leading-snug ${m.habis ? 'text-pudar' : 'text-abu-2'}`}>{m.deskripsi}</p>
           <div className="mt-2.5 flex items-center gap-2.5">
-            <span className="fuda">{rupiah(m.harga)}</span>
-            <Alergen daftar={m.alergen} className="text-abu-2" />
+            <span className={`fuda ${m.habis ? 'fuda-habis' : ''}`}>{rupiah(m.harga)}</span>
+            <Alergen daftar={m.alergen} className={m.habis ? 'text-pudar' : 'text-abu-2'} />
             <button
               type="button"
               onClick={() => onPilih(m)}

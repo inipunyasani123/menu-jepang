@@ -23,6 +23,7 @@
   --color-abu: #e6e1d6;
   --color-abu-2: #c9c2b6;
   --color-abu-3: #d8d1c4;
+  --color-pudar: #958f86; /* teks item habis di kartu lacquer: ≥4,8:1 di seluruh gradasi */
 }
 
 @layer base {
@@ -137,7 +138,8 @@
     content: ""; position: absolute; inset: 5px; pointer-events: none; border-radius: 3px;
     border: 1px solid rgb(177 104 58 / 0.5);
   }
-  .nampan-habis article > *:not(.stempel-habis) { opacity: 0.45; }
+  /* Item habis: ilustrasi & tombol diredupkan, teks memakai warna pudar (tetap terbaca), harga dicoret */
+  .nampan-habis .tombol-tambah { opacity: 0.45; }
   .stempel-habis {
     position: absolute; top: 0.75rem; right: 0.75rem; transform: rotate(6deg);
     background: var(--color-abu); color: var(--color-sumi); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
@@ -152,6 +154,8 @@
     font-variant-numeric: tabular-nums;
   }
   .fuda::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--color-tembaga); flex-shrink: 0; }
+  .fuda-habis { background: transparent; color: var(--color-pudar); text-decoration: line-through; box-shadow: inset 0 0 0 1px var(--color-sumi-3); }
+  .fuda-habis::before { background: var(--color-sumi-3); }
 
   .tombol-tambah {
     display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 9999px; flex-shrink: 0;

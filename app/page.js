@@ -34,9 +34,9 @@ export default function Halaman() {
       {/* Header = bilah kayu tempat noren menggantung */}
       <header className="sticky top-0 z-40 border-b border-tembaga/70 bg-sumi text-kertas">
         <div className="wadah flex h-12 items-center gap-3">
-          <a href="#top" className="flex items-center gap-2.5" aria-label={`${site.nama}, ke atas`}>
+          <a href="#top" className="flex items-center gap-2.5">
             <Hanko teks="赤" className="h-7 w-7 text-[0.95rem]" />
-            <span className="whitespace-nowrap font-display text-[1.05rem] font-bold leading-none">{site.nama}</span>
+            <span className="whitespace-nowrap font-display text-[1.05rem] font-bold leading-none">{site.nama}<span className="sr-only">, ke atas</span></span>
           </a>
           <div className="ms-6"><KategoriNav /></div>
           <div className="ms-auto flex items-center gap-3 sm:gap-4">
@@ -85,7 +85,7 @@ export default function Halaman() {
               </ol>
               <div className="mt-5 flex items-center justify-between gap-3 border-t border-sumi-3 pt-4">
                 <span className="fuda text-[0.95rem]">{rupiah(hariIni.harga)}</span>
-                <TombolPilih id={hariIni.id} className="tombol tombol-kertas" aria-label={`Pilih ${hariIni.nama}, pilih opsi`}>Pilih set ini</TombolPilih>
+                <TombolPilih id={hariIni.id} className="tombol tombol-kertas" aria-label={`Pilih set ini: ${hariIni.nama}, pilih opsi`}>Pilih set ini</TombolPilih>
               </div>
             </aside>
           </div>
