@@ -6,6 +6,7 @@ import { rupiah } from '@/lib/format';
 import { useNampan } from '@/lib/nampan';
 import { Plus, Minus, Cari, Tutup, Centang } from './Ikon';
 import Ilustrasi from './Ilustrasi';
+import FotoMenu from './FotoMenu';
 import Alergen from './Alergen';
 import Hanko from './Hanko';
 import JudulBagian from './JudulBagian';
@@ -29,9 +30,11 @@ function Kartu({ m, onPilih }) {
   return (
     <li className={`nampan-lacquer ${m.habis ? 'nampan-habis' : ''}`}>
       <article className="relative flex gap-3.5 p-3.5 sm:p-4" aria-labelledby={`item-${m.id}`}>
-        <div className={`h-[4.75rem] w-[4.75rem] shrink-0 sm:h-20 sm:w-20 ${m.habis ? 'opacity-45' : ''}`}>
-          <Ilustrasi data={m.ilustrasi} className="h-full w-full" />
-        </div>
+        <FotoMenu id={m.id} sizes="(min-width: 640px) 112px, 96px" className={`h-24 w-24 shrink-0 rounded-[4px] ring-1 ring-tembaga/50 sm:h-28 sm:w-28 ${m.habis ? 'opacity-45 grayscale' : ''}`}>
+          <div className={`h-[4.75rem] w-[4.75rem] shrink-0 sm:h-20 sm:w-20 ${m.habis ? 'opacity-45' : ''}`}>
+            <Ilustrasi data={m.ilustrasi} className="h-full w-full" />
+          </div>
+        </FotoMenu>
         <div className="min-w-0 flex-1">
           <h3 id={`item-${m.id}`} className={`font-display text-[1.08rem] font-bold leading-snug ${m.habis ? 'text-pudar' : 'text-kertas'} ${favorit ? 'pe-7' : ''}`}>{m.nama}</h3>
           {label.length > 0 && (
@@ -105,9 +108,11 @@ function LembarPilihan({ item, onTutup, onTambah }) {
         }}
       >
         <div className="flex items-start gap-4 border-b border-abu-3 px-5 pb-4 pt-5">
-          <div className="h-16 w-16 shrink-0 rounded-[4px] bg-sumi p-1.5">
-            <Ilustrasi data={item.ilustrasi} className="h-full w-full" />
-          </div>
+          <FotoMenu id={item.id} sizes="80px" className="h-20 w-20 shrink-0 rounded-[4px]">
+            <div className="h-16 w-16 shrink-0 rounded-[4px] bg-sumi p-1.5">
+              <Ilustrasi data={item.ilustrasi} className="h-full w-full" />
+            </div>
+          </FotoMenu>
           <div className="min-w-0 flex-1">
             <p className="label-fuda text-tembaga-tua">{kategori.find((k) => k.id === item.kategori)?.nama}</p>
             <h2 id="judul-pilihan" className="mt-0.5 text-[1.45rem] font-bold">{item.nama}</h2>

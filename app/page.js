@@ -9,6 +9,7 @@ import Menu from '@/components/Menu';
 import Nampan from '@/components/Nampan';
 import SelinganQR from '@/components/SelinganQR';
 import Teishoku from '@/components/Teishoku';
+import FotoMenu from '@/components/FotoMenu';
 import TombolPilih from '@/components/TombolPilih';
 import JudulBagian from '@/components/JudulBagian';
 import Footer from '@/components/Footer';
@@ -77,7 +78,9 @@ export default function Halaman() {
               </div>
               <p className="mt-2 font-display text-[1.6rem] font-bold leading-tight text-kertas">{hariIni.nama}</p>
               <p className="mt-1 text-sm leading-snug text-abu-2">{hariIni.deskripsi}</p>
-              <Teishoku utama={hariIni.ilustrasi.utama} className="mt-4 w-full" />
+              <FotoMenu id={hariIni.id} alt={`${hariIni.nama} disajikan di nampan`} priority sizes="(min-width: 1024px) 420px, 90vw" className="mt-4 aspect-[4/3] w-full rounded-[4px] ring-1 ring-tembaga/40">
+                <Teishoku utama={hariIni.ilustrasi.utama} className="mt-4 w-full" />
+              </FotoMenu>
               <ol className="mt-4 grid grid-cols-2 gap-x-4 gap-y-1.5 text-[0.85rem] text-abu sm:grid-cols-3">
                 {['Nasi koshihikari', 'Sup miso kombu', 'Lauk utama: saba shioyaki', 'Acar takuan & shibazuke', 'Ocha hangat'].map((t, i) => (
                   <li key={t} className="flex gap-2"><span className="w-4 shrink-0 font-semibold text-tembaga-muda">{i + 1}</span>{t}</li>
