@@ -38,7 +38,7 @@ function Kartu({ m, onPilih }) {
         <div className="min-w-0 flex-1">
           <h3 id={`item-${m.id}`} className={`font-display text-[1.08rem] font-bold leading-snug ${m.habis ? 'text-pudar' : 'text-kertas'} ${favorit ? 'pe-7' : ''}`}>{m.nama}</h3>
           {label.length > 0 && (
-            <p className="mt-0.5 flex flex-wrap gap-x-2 text-[0.7rem] font-semibold uppercase tracking-[0.12em]">
+            <p className="mt-0.5 flex flex-wrap gap-x-2 text-[12px] font-semibold uppercase tracking-[0.12em]">
               {label.map((t) => <span key={t} className={m.habis ? 'text-pudar' : LABEL_TAG[t][1]}>{LABEL_TAG[t][0]}</span>)}
             </p>
           )}

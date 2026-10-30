@@ -20,7 +20,7 @@ export function IkonAlergen({ id, className = 'h-4 w-4' }) {
 
 /** Deretan ikon alergen suatu item, dengan nama alergen untuk pembaca layar. */
 export default function Alergen({ daftar = [], className = '' }) {
-  if (!daftar.length) return <span className={`whitespace-nowrap text-[0.7rem] font-medium ${className}`}>Bebas 5 alergen</span>;
+  if (!daftar.length) return <span className={`whitespace-nowrap text-[12px] font-medium ${className}`}>Bebas 5 alergen</span>;
   const nama = ALERGEN.filter((a) => daftar.includes(a.id)).map((a) => a.label);
   return (
     <span className={`inline-flex items-center gap-1.5 ${className}`} title={`Mengandung: ${nama.join(', ')}`}>

@@ -78,7 +78,7 @@
   /* Label kecil gaya fuda (papan nama kayu) */
   .label-fuda {
     font-family: var(--font-sans);
-    font-size: 0.72rem;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -94,9 +94,9 @@
     box-shadow: inset 0 -24px 40px -30px rgb(0 0 0 / 0.8);
   }
   .noren-tepi { position: absolute; left: 0; right: 0; bottom: -0.65rem; height: 0.7rem; width: 100%; display: block; }
-  .noren-latin { font-family: var(--font-sans); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-abu-2); }
+  .noren-latin { font-family: var(--font-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-abu-2); }
   .noren-kanji { font-size: 2rem; color: var(--color-kertas); }
-  @media (min-width: 640px) { .noren-kanji { font-size: 2.8rem; } .noren-latin { font-size: 0.7rem; } }
+  @media (min-width: 640px) { .noren-kanji { font-size: 2.8rem; } .noren-latin { font-size: 12px; } }
 
   /* Hanko: cap stempel merah persegi dengan garis dalam tipis */
   .hanko {
@@ -142,7 +142,7 @@
   .nampan-habis .tombol-tambah { opacity: 0.45; }
   .stempel-habis {
     position: absolute; top: 0.75rem; right: 0.75rem; transform: rotate(6deg);
-    background: var(--color-abu); color: var(--color-sumi); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--color-abu); color: var(--color-sumi); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
     padding: 0.25rem 0.5rem; border-radius: 2px; box-shadow: inset 0 0 0 1px var(--color-sumi), inset 0 0 0 2px var(--color-abu);
   }
 
@@ -216,7 +216,7 @@
   .nav-bawah-item {
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
     height: 3.75rem; margin-top: -1px; border-top: 2px solid transparent;
-    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.02em; color: var(--color-tinta-2); transition: color 0.2s;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.02em; color: var(--color-tinta-2); transition: color 0.2s;
   }
   .nav-bawah-item[aria-current="true"] { color: var(--color-hanko); border-top-color: var(--color-hanko); font-weight: 700; }
 

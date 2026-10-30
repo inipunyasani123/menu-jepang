@@ -19,7 +19,7 @@ export default function SelinganQR() {
             </div>
             <QR url={`${site.url}/?meja=${CONTOH_MEJA}`} className="mt-3 h-40 w-40 text-sumi" label={`Kode QR contoh untuk meja ${CONTOH_MEJA}`} />
             <p className="mt-3 font-display text-base font-bold">{site.nama}</p>
-            <p className="text-[0.7rem] text-tinta-3">menu-jepang.pintuweb.id/?meja={CONTOH_MEJA}</p>
+            <p className="text-[12px] text-tinta-3">menu-jepang.pintuweb.id/?meja={CONTOH_MEJA}</p>
           </div>
         </div>
         <div className="md:col-span-8">
